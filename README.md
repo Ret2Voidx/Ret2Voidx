@@ -24,8 +24,9 @@ Program received signal SIGCURIOUS, Continuing.
 ![C](https://img.shields.io/badge/C-7C3AED?style=for-the-badge&logo=c&logoColor=0B0F14)
 ![C++](https://img.shields.io/badge/C%2B%2B-7C3AED?style=for-the-badge&logo=cplusplus&logoColor=0B0F14)
 ![Assembly](https://img.shields.io/badge/x86%2Fx64_ASM-7C3AED?style=for-the-badge&logoColor=0B0F14)
-![Python](https://img.shields.io/badge/Python-7C3AED?style=for-the-badge&logo=python&logoColor=0B0F14)
-![Windows](https://img.shields.io/badge/Windows_Internals-7C3AED?style=for-the-badge&logo=windows&logoColor=0B0F14)
+![x64dbg](https://img.shields.io/badge/x64dbg-7C3AED?style=for-the-badge&logoColor=0B0F14)
+![ETW](https://img.shields.io/badge/Windows_ETW%2FTDH-7C3AED?style=for-the-badge&logo=windows&logoColor=0B0F14)
+![SQLite](https://img.shields.io/badge/SQLite-7C3AED?style=for-the-badge&logo=sqlite&logoColor=0B0F14)
 
 </div>
 
@@ -42,4 +43,3 @@ Program received signal SIGCURIOUS, Continuing.
 <div align="center">
 <sub>// still unwinding.</sub>
 </div>
-
