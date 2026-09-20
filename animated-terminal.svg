@@ -1,0 +1,68 @@
+<svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono','Consolas',monospace">
+  <defs>
+    <linearGradient id="termBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12141C"/>
+      <stop offset="100%" stop-color="#0B0F14"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- window -->
+  <rect x="1" y="1" width="818" height="298" rx="12" fill="url(#termBg)" stroke="#2A2A3D" stroke-width="1.5"/>
+
+  <!-- title bar -->
+  <rect x="1" y="1" width="818" height="34" rx="12" fill="#161822"/>
+  <rect x="1" y="23" width="818" height="12" fill="#161822"/>
+  <circle cx="26" cy="18" r="6" fill="#3A3A4A"/>
+  <circle cx="46" cy="18" r="6" fill="#3A3A4A"/>
+  <circle cx="66" cy="18" r="6" fill="#3A3A4A"/>
+  <text x="410" y="23" text-anchor="middle" fill="#5B5B70" font-size="12">ret2void@edr-dev: ~/backtrace</text>
+
+  <!-- prompt line -->
+  <text x="24" y="66" fill="#8B5CF6" font-size="14">$ unwind --stack</text>
+
+  <!-- backtrace lines, revealed in sequence -->
+  <g font-size="13.5" fill="#D1D5DB" filter="url(#softGlow)">
+    <text x="24" y="98" opacity="0">
+      #0  0x00000001  soc_analyst        () at /career/soc.c:1
+      <animate attributeName="opacity" from="0" to="1" begin="0.6s" dur="0.4s" fill="freeze"/>
+    </text>
+    <text x="24" y="124" opacity="0">
+      #1  0x00000002  binary_exploit     () at /research/pwn.c:1
+      <animate attributeName="opacity" from="0" to="1" begin="1.3s" dur="0.4s" fill="freeze"/>
+    </text>
+    <text x="24" y="150" opacity="0" fill="#C4B5FD">
+      #2  0x00000003  firmware_security  () at /future/embedded.c:1  &lt;-- next
+      <animate attributeName="opacity" from="0" to="1" begin="2.0s" dur="0.4s" fill="freeze"/>
+    </text>
+    <text x="24" y="176" opacity="0" fill="#A78BFA">
+      #3  0x00000004  space_security     () at /orbit/final.c:1      &lt;-- destination
+      <animate attributeName="opacity" from="0" to="1" begin="2.7s" dur="0.4s" fill="freeze"/>
+    </text>
+  </g>
+
+  <text x="24" y="216" fill="#6B7280" font-size="12.5" opacity="0">
+    Program received signal SIGCURIOUS, Continuing.
+    <animate attributeName="opacity" from="0" to="1" begin="3.5s" dur="0.6s" fill="freeze"/>
+  </text>
+
+  <!-- next prompt + blinking cursor -->
+  <text x="24" y="254" fill="#8B5CF6" font-size="14" opacity="0">
+    $
+    <animate attributeName="opacity" from="0" to="1" begin="4.2s" dur="0.2s" fill="freeze"/>
+  </text>
+  <rect x="42" y="242" width="9" height="15" fill="#8B5CF6" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.7;0.72;0.86;0.88;1" begin="4.4s" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="24" y="284" fill="#374151" font-size="11" opacity="0">
+    // still unwinding.
+    <animate attributeName="opacity" from="0" to="1" begin="5.2s" dur="0.8s" fill="freeze"/>
+  </text>
+</svg>
